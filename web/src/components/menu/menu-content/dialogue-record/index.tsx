@@ -41,36 +41,6 @@ const DialogueRecord = (props: DialogueRecordProps) => {
         }}
       ></RecordHeader>
       <RecordContent></RecordContent>
-      {sttSubtitles.length ? (
-        <div className={styles.btnWrapper}>
-          {showAIModule() ? (
-            <div className={styles.btn} onClick={onClickExport}>
-              {t("export.text")}
-            </div>
-          ) : null}
-          <div className={styles.btn} onClick={onClickStorage}>
-            {t("storage.text")}
-          </div>
-        </div>
-      ) : null}
-      <LanguageShowDialog
-        open={openLanguageShowDialog}
-        onCancel={() => {
-          setOpenLanguageShowDialog(false)
-        }}
-        onOk={() => {
-          setOpenLanguageShowDialog(false)
-        }}
-      ></LanguageShowDialog>
-      <LanguageStorageDialog
-        open={openLanguageStorageDialog}
-        onCancel={() => {
-          setOpenLanguageStorageDialog(false)
-        }}
-        onOk={() => {
-          setOpenLanguageStorageDialog(false)
-        }}
-      ></LanguageStorageDialog>
     </div>
   )
 }
